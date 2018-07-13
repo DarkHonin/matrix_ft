@@ -6,7 +6,7 @@
 /*   By: wgourley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 23:53:16 by wgourley          #+#    #+#             */
-/*   Updated: 2018/07/12 23:53:16 by wgourley         ###   ########.fr       */
+/*   Updated: 2018/07/13 13:26:37 by wgourley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,11 @@ typedef unsigned int t_coor;
 
 t_matrix	*new_matrix(t_coor rows, t_coor cols);
 void		print_matrix(t_matrix *mtr);
-void		set_row(t_matrix *mtr,t_coor r, float *items);
 float		*get_row(t_matrix *mtr, t_coor r);
 float		**get_col(t_matrix *mtr, t_coor c);
+void		set_cell(t_matrix *mtr, t_coor r, t_coor c, float p);
+void		matrix_valid_multiple(t_matrix *m1, t_matrix *m2);
+float		matrix_rc_prod(t_matrix *m1, t_matrix *m2, t_coor c, t_coor r);
+t_matrix	*matrix_prod(t_matrix *m1, t_matrix *m2);
 
 #endif

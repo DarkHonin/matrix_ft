@@ -1,20 +1,28 @@
 LIBFT=libft
-LIB_DIR=$(addprefix  ${CURDIR}/,$(LIBFT))
-DEPS= $(addprefix  $(LIBFT)/,libft.a)
+INCLUDES= -I "$(LIBFT)"
+LIBS=-lft -L "$(LIBFT)"
 
-INCLUDES= -I "$(LIB_DIR)"
-LIBS=-lft -L "$(LIB_DIR)"
+OBJ=matrix.o matrix_err.o matrix_math.o
 
-OBJ=matrix.o
+NAME=libmatrix.a
 
 make: $(DEPS) $(OBJ)
-	gcc testmain.c $(OBJ) $(INCLUDES) $(LIBS)
+	@echo $(LIBFT)
+	@gcc testmain.c $(OBJ) $(INCLUDES) $(LIBS)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
+	@echo "LIB MADE"
 
 $(OBJ):
 	gcc $*.c -c $(INCLUDES)
 
 $(DEPS):
-	make -C $(LIB_DIR) $(CMD)
+	make -C $(LIBFT) $(CMD)
 
 clean:
-	rm $(OBJ)
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean make

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   matric.c                                           :+:      :+:    :+:   */
+/*   matrix.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wgourley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 23:55:37 by wgourley          #+#    #+#             */
-/*   Updated: 2018/07/12 23:55:37 by wgourley         ###   ########.fr       */
+/*   Updated: 2018/07/13 11:30:14 by wgourley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,25 +32,6 @@ void		set_cell(t_matrix *mtr, t_coor r, t_coor c, float p)
 	mtr->cells[r][c] = p;
 }
 
-void		set_row(t_matrix *mtr, t_coor r, float *items)
-{
-	t_coor index;
-
-	index = 0;
-	while (index < mtr->cols)
-		mtr->cells[r][index] = items[index++];
-}
-
-void		set_col(t_matrix *mtr, t_coor c, float *items)
-{
-	t_coor index;
-
-	index = 0;
-	while (index < mtr->cols)
-		mtr->cells[index][c] = items[index++];
-}
-
-
 float		*get_row(t_matrix *mtr, t_coor r)
 {
 	return (mtr->cells[r]);
@@ -64,7 +45,10 @@ float		**get_col(t_matrix *mtr, t_coor c)
 	in = 0;
 	ret = ft_memalloc(sizeof(float) * mtr->cols);
 	while (in < mtr->cols)
-		ret[in] = &(mtr->cells[in++][c]);
+	{
+		ret[in] = &(mtr->cells[in][c]);
+		in++;
+	}
 	return (ret);
 }
 
