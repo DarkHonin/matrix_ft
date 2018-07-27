@@ -38,7 +38,7 @@ float		matrix_rc_prod(t_matrix *m1, t_matrix *m2, t_coor c, t_coor r)
 {
 	float	*row;
 	float	**col;
-	int		index;
+	size_t		index;
 	float	tot;	
 
 	matrix_valid_multiple(m1, m2);

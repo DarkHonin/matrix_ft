@@ -15,7 +15,7 @@
 t_matrix	*new_matrix(t_coor rows, t_coor cols)
 {
 	t_matrix *ret;
-	int	ind;
+	size_t	ind;
 
 	ind = 0;
 	ret = (t_matrix *)ft_memalloc(sizeof(t_matrix));
@@ -29,7 +29,7 @@ t_matrix	*new_matrix(t_coor rows, t_coor cols)
 
 void		del_matrix(t_matrix *mtr)
 {
-	int r;
+	size_t r;
 
 	r = 0;
 	while (r < mtr->rows)

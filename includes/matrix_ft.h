@@ -18,11 +18,11 @@
 typedef struct	s_matrix
 {
 	float			**cells;
-	unsigned int	rows;
-	unsigned int	cols;
+	size_t	rows;
+	size_t	cols;
 }				t_matrix;
 
-typedef unsigned int t_coor;
+typedef size_t t_coor;
 
 t_matrix	*new_matrix(t_coor rows, t_coor cols);
 void		print_matrix(t_matrix *mtr);

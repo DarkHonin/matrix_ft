@@ -39,8 +39,8 @@ float		**get_col(t_matrix *mtr, t_coor c)
 
 void		print_matrix(t_matrix *mtr)
 {
-	int r;
-	int c;
+	size_t r;
+	size_t c;
 
 	ft_putstr("Matrix dimention: [");
 	ft_putnbr(mtr->rows);
