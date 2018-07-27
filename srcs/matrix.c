@@ -6,26 +6,11 @@
 /*   By: wgourley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 23:55:37 by wgourley          #+#    #+#             */
-/*   Updated: 2018/07/13 11:30:14 by wgourley         ###   ########.fr       */
+/*   Updated: 2018/07/27 11:11:40 by wgourley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "matrix_ft.h"
-
-t_matrix	*new_matrix(t_coor rows, t_coor cols)
-{
-	t_matrix *ret;
-	int	ind;
-
-	ind = 0;
-	ret = (t_matrix *)ft_memalloc(sizeof(t_matrix));
-	ret->rows = rows;
-	ret->cols = cols;
-	ret->cells = (float **)ft_memalloc(rows * sizeof(float *));
-	while(ind < rows)
-		ret->cells[ind++] = (float *)ft_memalloc(sizeof(float) * cols);
-	return (ret);
-}
 
 void		set_cell(t_matrix *mtr, t_coor r, t_coor c, float p)
 {

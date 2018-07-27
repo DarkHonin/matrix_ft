@@ -6,7 +6,7 @@
 /*   By: wgourley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 23:53:16 by wgourley          #+#    #+#             */
-/*   Updated: 2018/07/13 13:26:37 by wgourley         ###   ########.fr       */
+/*   Updated: 2018/07/27 11:13:37 by wgourley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ void		set_cell(t_matrix *mtr, t_coor r, t_coor c, float p);
 void		matrix_valid_multiple(t_matrix *m1, t_matrix *m2);
 float		matrix_rc_prod(t_matrix *m1, t_matrix *m2, t_coor c, t_coor r);
 t_matrix	*matrix_prod(t_matrix *m1, t_matrix *m2);
+void		del_matrix(t_matrix *mtr);
 
 #endif
