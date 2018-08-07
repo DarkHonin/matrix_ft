@@ -6,7 +6,7 @@
 /*   By: wgourley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/27 11:11:21 by wgourley          #+#    #+#             */
-/*   Updated: 2018/07/27 11:13:26 by wgourley         ###   ########.fr       */
+/*   Updated: 2018/08/07 12:59:21 by wgourley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,25 @@ void		del_matrix(t_matrix *mtr)
 		free(mtr->cells[r++]);
 	free(mtr->cells);
 	free(mtr);
+}
+
+t_matrix	*clone_matrix(t_matrix *e)
+{
+	t_matrix	*ret;
+	size_t		r;
+	size_t		c;
+
+	ret = new_matrix(e->rows, e->cols);
+	r = 0;
+	while (r < e->rows)
+	{
+		c = 0;
+		while (c < e->cols)
+		{
+			ret->cells[r][c] = e->cells[r][c];
+			c++;
+		}
+		r++;
+	}
+	return (ret);
 }

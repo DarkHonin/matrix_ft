@@ -6,7 +6,7 @@
 /*   By: wgourley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 23:53:16 by wgourley          #+#    #+#             */
-/*   Updated: 2018/08/07 10:22:09 by wgourley         ###   ########.fr       */
+/*   Updated: 2018/08/07 12:59:08 by wgourley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ t_matrix	*matrix_prod(t_matrix *m1, t_matrix *m2);
 void		del_matrix(t_matrix *mtr);
 void		matrix_valid_arithmetic(t_matrix *m1, t_matrix *m2);
 t_matrix	*matrix_dif(t_matrix *a, t_matrix *b);
+t_matrix	*clone_matrix(t_matrix *e);
 
 #endif
