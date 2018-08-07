@@ -6,7 +6,7 @@
 /*   By: wgourley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 11:32:17 by wgourley          #+#    #+#             */
-/*   Updated: 2018/07/13 13:27:33 by wgourley         ###   ########.fr       */
+/*   Updated: 2018/08/07 10:22:00 by wgourley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,26 @@ float		matrix_rc_prod(t_matrix *m1, t_matrix *m2, t_coor c, t_coor r)
 		index++;
 	}
 	return (tot);
+}
+
+t_matrix	*matrix_dif(t_matrix *a, t_matrix *b)
+{
+	t_matrix	*ret;
+	size_t		c;
+	size_t		r;
+
+	matrix_valid_arithmetic(a, b);
+	ret = new_matrix(a->rows, a->cols);
+	r = 0;
+	while (r < ret->rows)
+	{
+		c = 0;
+		while (c < ret->cols)
+		{
+			ret->cells[r][c] = a->cells[r][c] - b->cells[r][c];
+			c++;
+		}
+		r++;
+	}
+	return (ret);
 }
